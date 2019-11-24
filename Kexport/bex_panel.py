@@ -5,7 +5,7 @@ class BatEx_PT_Panel(Panel):
     bl_space_type = "VIEW_3D"
     bl_region_type = "UI"
     bl_label = "Batch Fbx export"
-    bl_category = "Batex"
+    bl_category = "Kexport"
     
     def draw(self, context):
         
