@@ -19,3 +19,4 @@ class BatEx_OT_Operator(Operator):
         return {'FINISHED'}
 
 
+this = "C:\Users\Ian\OneDrive\UE4_ThroneRoom"

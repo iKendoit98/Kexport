@@ -48,7 +48,7 @@ def add_export_button(self, context):
 
         self.layout.operator(
         BatEx_OT_Operator.bl_idname,
-        text="Export",
+        text="UExport",
         icon='PLUGIN')
 
     
