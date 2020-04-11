@@ -5,18 +5,19 @@ bl_info = {
     "description" : "Batch Exporter focused on game exports",
     "blender" : (2, 80, 2),
     "version" : (0, 0, 1),
-    "location" : "",
-    "warning" : "",
+    "location" : "Kexport panel",
     "category" : "Import-Export"
 }
-
+     
 
 
 
 import bpy
 
-from . Kexport_op import *
+from bpy.types import Panel
 
+from . Kexport_op import *
+from . kex_export import *
 
 
 class Kexport_Panel(bpy.types.Panel):
@@ -29,13 +30,14 @@ class Kexport_Panel(bpy.types.Panel):
         layout = self.layout
         scene = context.scene
 
-        #row = layout.row()
+        row = layout.row()
+        row.label(text="Export folder:")
         
 
 
 
 
-classes = (Kexport, Kexport_OT_Operator, Kexport_Panel)
+classes = (Kex_Export, Kexport_OT_Operator, Kexport_Panel)
 
 register, unregister = bpy.utils.register_classes_factory(classes)
 
