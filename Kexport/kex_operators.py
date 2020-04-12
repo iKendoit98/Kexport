@@ -5,7 +5,7 @@ from . kex_export import *
 
 
 
-class Kexport_OT_Operator(bpy.types.Operator):
+class Kex_OT_Operator(bpy.types.Operator):
     bl_idname = "object.kexport_ot_operator"
     bl_label = "Batch Export"
     bl_description = "Export Selected objects as fbx"
@@ -22,7 +22,7 @@ class Kexport_OT_Operator(bpy.types.Operator):
         return {"FINISHED"}
 
 
-class Kexport_LOW_OT_Operator(bpy.types.Operator):
+class Kex_LOW_OT_Operator(bpy.types.Operator):
     bl_idname = "object.kexport_low_ot_operator"
     bl_label = "Low Poly Export"
     bl_description = "Export Selected objects as low Poly fbx"
@@ -39,7 +39,7 @@ class Kexport_LOW_OT_Operator(bpy.types.Operator):
 
 
 
-class Kexport_HIGH_OT_Operator(bpy.types.Operator):
+class Kex_HIGH_OT_Operator(bpy.types.Operator):
     bl_idname = "object.kexport_high_ot_operator"
     bl_label = "High Poly Export"
     bl_description = "Export Selected objects as high Poly fbx"

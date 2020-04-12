@@ -2,7 +2,6 @@ import bpy
 import os
 
 
-#from . Kexport_op import *
 
 class Kex_Export:
 
