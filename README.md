@@ -7,3 +7,4 @@ https://github.com/jayanam/batex
 
 Kexport preview: 
 ![alt text][Kexport.jpg]
+[logo]: https://github.com/iKendoit98/Kexport/blob/master/Kexport.jpg "Logo Title Text 2"
