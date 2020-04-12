@@ -9,6 +9,7 @@ class Kex_Export:
         self.__context = context
         self.__assets_folder = context.scene.assets_folder
         self.__bakes_folder = context.scene.bakes_folder
+        self.__mesh_type = context.scene.mesh_type
 
 
     # Export objs
@@ -33,7 +34,7 @@ class Kex_Export:
 
             # Store objects Name
             objname = bpy.path.clean_name(obj.name)
-            name = "SM_" + objname
+            name = self.__mesh_type + objname
             # Store objects name and join to full filepath
             fn = os.path.join(self.__assets_folder, name)
 

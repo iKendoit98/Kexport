@@ -34,6 +34,16 @@ bpy.types.Scene.bakes_folder = StringProperty(name="bakes folder",
                subtype="DIR_PATH", 
                description="Directory to export the fbx files into")
 
+
+bpy.types.Scene.mesh_type = EnumProperty(
+    name="Mesh Type",
+    description="Defines skeletal or static mesh type",
+    items=(
+        ('SM_','Static Mesh','Static Mesh', 0),
+        ('SK_', 'Skeletal Mesh', 'Skeletal Mesh', 1),
+        ),
+    default='SM_'
+    )
 # smoothing type property
 bpy.types.Scene.export_smoothing = EnumProperty(
     name="Smoothing",

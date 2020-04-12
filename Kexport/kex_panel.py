@@ -34,6 +34,17 @@ class Kex_Panel(bpy.types.Panel):
         col_smooth = row_smooth.column()
         col_smooth.alignment = 'EXPAND'
         col_smooth.prop(context.scene, "export_smoothing", text="")
+
+
+         # label
+        row_smooth = layout.row()
+        col_smooth_lbl = row_smooth.column()
+        col_smooth_lbl.label(text="Mesh Type:")
+         # property
+        col_smooth = row_smooth.column()
+        col_smooth.alignment = 'EXPAND'
+        col_smooth.prop(context.scene, "mesh_type", text="")
+
         
         # Export Asset button
         row = layout.row()
