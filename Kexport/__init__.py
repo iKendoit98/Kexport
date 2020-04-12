@@ -29,8 +29,7 @@ from . kex_panel import *
 bpy.types.Scene.assets_folder = StringProperty(name="assets folder", 
                subtype="DIR_PATH", 
                description="Directory to export the fbx files into")
-
- # Bakes export folder destination property
+# Bakes export folder destination property
 bpy.types.Scene.bakes_folder = StringProperty(name="bakes folder", 
                subtype="DIR_PATH", 
                description="Directory to export the fbx files into")
