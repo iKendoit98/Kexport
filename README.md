@@ -6,4 +6,4 @@ https://github.com/jayanam/batex
 
 
 Kexport preview: 
-![alt text][Kexort.jpg]
+![alt text][Kexport.jpg]
