@@ -3,7 +3,7 @@ import os
 
 
 
-class Kex_Export:
+class KEX_Export:
 
     def __init__(self, context):
         self.__context = context
@@ -13,7 +13,7 @@ class Kex_Export:
 
 
     # Export objs
-    def export_asset(self):
+    def export_asset(self, target):
 
         bpy.ops.object.mode_set(mode='OBJECT')
         obj_active = bpy.context.active_object
@@ -36,7 +36,10 @@ class Kex_Export:
             objname = bpy.path.clean_name(obj.name)
             name = self.__mesh_type + objname
             # Store objects name and join to full filepath
-            fn = os.path.join(self.__assets_folder, name)
+            if target == 0:
+                fn = os.path.join(self.__assets_folder, name)
+            elif target == 1:
+                fn = os.path.join(self.__bakes_folder, name)
 
             # Export objs with properties
             bpy.ops.export_scene.fbx(
@@ -51,5 +54,6 @@ class Kex_Export:
 
             # Return objs location to previous location
             obj_active.location = loc
+            obj.select_set(True)
             print ('Moved back to original loc')
  

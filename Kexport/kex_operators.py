@@ -5,7 +5,7 @@ from . kex_export import *
 
 
 
-class Kex_OT_Operator(bpy.types.Operator):
+class KEX_OT_Operator(bpy.types.Operator):
     bl_idname = "object.kexport_ot_operator"
     bl_label = "Batch Export"
     bl_description = "Export Selected objects as fbx"
@@ -15,42 +15,24 @@ class Kex_OT_Operator(bpy.types.Operator):
 
     def execute(self, context):
         
-        k_export = Kex_Export(context)
-        k_export.export_asset()        
+        k_export = KEX_Export(context)
+        k_export.export_asset(0)        
 
-        self.report({'INFO'}, "Exported to " + context.scene.export_folder)
+        #self.report({'INFO'}, "Exported to " + context.scene.export_folder)
         return {"FINISHED"}
 
-
-class Kex_LOW_OT_Operator(bpy.types.Operator):
-    bl_idname = "object.kexport_low_ot_operator"
-    bl_label = "Low Poly Export"
-    bl_description = "Export Selected objects as low Poly fbx"
+class KEX_BAKES_OT_Operator(bpy.types.Operator):
+    bl_idname = "object.kexport_bakes_ot_operator"
+    bl_label = "Export to selected bakes folder"
+    bl_description = "Export Selected objects to bakes folder"
     bl_options = {"REGISTER"}
 
 
 
     def execute(self, context):
         
-        k_export = Kex_Export(context)
-        k_export.export_lowpoly()
-        self.report({'INFO'}, "Exported to " + context.scene.export_folder)
-        return {"FINISHED"}
-
-
-
-class Kex_HIGH_OT_Operator(bpy.types.Operator):
-    bl_idname = "object.kexport_high_ot_operator"
-    bl_label = "High Poly Export"
-    bl_description = "Export Selected objects as high Poly fbx"
-    bl_options = {"REGISTER"}
-
-
-
-
-    def execute(self, context):
-        
-        k_export = Kex_Export(context)
-        k_export.export_highpoly()
-        self.report({'INFO'}, "Exported to " + context.scene.export_folder)
+        k_export = KEX_Export(context)
+        k_export.export_asset(1)
+        print("Exported to:    Bakes Folder")
+        #self.report({'INFO'}, "Exported to " + context.scene.export_folder)
         return {"FINISHED"}

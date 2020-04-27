@@ -63,20 +63,23 @@ def append_export_topbar(self, context):
 
         # Place the export operator here
         self.layout.operator(
-        Kex_OT_Operator.bl_idname,
+        KEX_OT_Operator.bl_idname,
         text="UExport",
         icon='FILE_TICK') 
 
 
 def register():
-    bpy.utils.register_class(Kex_OT_Operator)
-    bpy.utils.register_class(Kex_Panel)
+    bpy.utils.register_class(KEX_OT_Operator)
+    bpy.utils.register_class(KEX_BAKES_OT_Operator)
+    bpy.utils.register_class(KEX_PT_Panel)
 
     bpy.types.TOPBAR_HT_upper_bar.append(append_export_topbar)
 
 def unregister():
-    bpy.utils.unregister_class(Kex_OT_Operator)
-    bpy.utils.unregister_class(Kex_Panel)
+    bpy.utils.unregister_class(KEX_OT_Operator)
+    bpy.utils.unregister_class(KEX_BAKES_OT_Operator)
+    bpy.utils.unregister_class(KEX_PT_Panel)
+
     bpy.types.TOPBAR_HT_upper_bar.remove(append_export_topbar)
 
 
