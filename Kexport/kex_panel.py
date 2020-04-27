@@ -50,11 +50,11 @@ class Kex_Panel(bpy.types.Panel):
         row = layout.row()
         row.operator('object.kexport_ot_operator', text='Export Game Asset')
 
-        # Low poly export button
-        row = layout.row()
-        colA = row.column()
-        colA.operator('object.kexport_low_ot_operator', text='Export Low Poly')
+        # # Low poly export button
+        # row = layout.row()
+        # colA = row.column()
+        # colA.operator('object.kexport_low_ot_operator', text='Export Low Poly')
         
-        # High poly export button
-        colB = row.column()
-        colB.operator('object.kexport_high_ot_operator', text='Export High Poly')
+        # # High poly export button
+        # colB = row.column()
+        # colB.operator('object.kexport_high_ot_operator', text='Export High Poly')

@@ -70,16 +70,12 @@ def append_export_topbar(self, context):
 
 def register():
     bpy.utils.register_class(Kex_OT_Operator)
-    bpy.utils.register_class(Kex_LOW_OT_Operator)
-    bpy.utils.register_class(Kex_HIGH_OT_Operator)
     bpy.utils.register_class(Kex_Panel)
 
     bpy.types.TOPBAR_HT_upper_bar.append(append_export_topbar)
 
 def unregister():
     bpy.utils.unregister_class(Kex_OT_Operator)
-    bpy.utils.unregister_class(Kex_LOW_OT_Operator)
-    bpy.utils.unregister_class(Kex_HIGH_OT_Operator)
     bpy.utils.unregister_class(Kex_Panel)
     bpy.types.TOPBAR_HT_upper_bar.remove(append_export_topbar)
 
