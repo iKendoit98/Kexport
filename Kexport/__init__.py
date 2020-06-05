@@ -56,16 +56,6 @@ bpy.types.Scene.export_smoothing = EnumProperty(
     default='OFF'
     )
 
-def append_export_topbar(self, context):
-    if context.region.alignment != 'RIGHT':
-        layout = self.layout
-        row = layout.row(align=True)
-
-        # Place the export operator here
-        self.layout.operator(
-        KEX_OT_Operator.bl_idname,
-        text="UExport",
-        icon='FILE_TICK') 
 
 
 def register():
@@ -73,14 +63,12 @@ def register():
     bpy.utils.register_class(KEX_BAKES_OT_Operator)
     bpy.utils.register_class(KEX_PT_Panel)
 
-    bpy.types.TOPBAR_HT_upper_bar.append(append_export_topbar)
 
 def unregister():
     bpy.utils.unregister_class(KEX_OT_Operator)
     bpy.utils.unregister_class(KEX_BAKES_OT_Operator)
     bpy.utils.unregister_class(KEX_PT_Panel)
 
-    bpy.types.TOPBAR_HT_upper_bar.remove(append_export_topbar)
 
 
 if __name__ == "__main__":
