@@ -8,12 +8,12 @@ class KEX_Export:
     def __init__(self, context):
         self.__context = context
         self.__assets_folder = context.scene.assets_folder
-        self.__bakes_folder = context.scene.bakes_folder
         self.__mesh_type = context.scene.mesh_type
+        self.__apply_transform = context.scene.apply_transform
 
 
     # Export objs
-    def export_asset(self, target):
+    def export_asset(self):
 
         bpy.ops.object.mode_set(mode='OBJECT')
         obj_active = bpy.context.active_object
@@ -36,16 +36,17 @@ class KEX_Export:
             objname = bpy.path.clean_name(obj.name)
             name = self.__mesh_type + objname
             # Store objects name and join to full filepath
-            if target == 0:
-                fn = os.path.join(self.__assets_folder, name)
-            elif target == 1:
-                fn = os.path.join(self.__bakes_folder, name)
+            fn = os.path.join(self.__assets_folder, name)
 
             # Export objs with properties
             bpy.ops.export_scene.fbx(
-                filepath=fn + ".fbx", 
+                filepath=fn + ".fbx",
+                filter_glob="*.fbx", 
                 use_selection=True,
+                use_armature_deform_only=True,
+                bake_space_transform=self.__apply_transform,
                 mesh_smooth_type=self.__context.scene.export_smoothing,
+                add_leaf_bones=False,
                 path_mode='ABSOLUTE')
 
             # Unselect Objects

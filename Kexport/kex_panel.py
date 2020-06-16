@@ -17,12 +17,6 @@ class KEX_PT_Panel(bpy.types.Panel):
         # # Asset folder selection
         row.prop(context.scene, 'assets_folder', text='')
 
-        # bakes folder label
-        row = layout.row(align=True)
-        row.label(text="Bakes folder:")
-        # # Bakes folder selection
-        row.prop(context.scene, 'bakes_folder', text='')
-
 
         # label
         row_smooth = layout.row()
@@ -43,9 +37,13 @@ class KEX_PT_Panel(bpy.types.Panel):
         col_smooth.alignment = 'EXPAND'
         col_smooth.prop(context.scene, "mesh_type", text="")
 
+        row = layout.row()
+        row.prop(context.scene, "apply_transform", text="Apply transform")
+
         
         # Export Asset button
         row = layout.row(align=True)
         row.operator('object.kexport_ot_operator', text='Asset Export')
-        row.operator('object.kexport_bakes_ot_operator', text='Bakes Export')
+        row = layout.row()
+        row.operator('object.kexport_ot_openfolder', text='Open export folder')
         

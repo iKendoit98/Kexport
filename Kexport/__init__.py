@@ -29,10 +29,13 @@ from . kex_panel import *
 bpy.types.Scene.assets_folder = StringProperty(name="assets folder", 
                subtype="DIR_PATH", 
                description="Directory to export the fbx files into")
-# Bakes export folder destination property
-bpy.types.Scene.bakes_folder = StringProperty(name="bakes folder", 
-               subtype="DIR_PATH", 
-               description="Directory to export the fbx files into")
+
+
+
+
+bpy.types.Scene.apply_transform = BoolProperty(name="Apply transform",
+                default=True,
+                description="Applies scale and transform (Experimental)")
 
 
 bpy.types.Scene.mesh_type = EnumProperty(
@@ -59,14 +62,14 @@ bpy.types.Scene.export_smoothing = EnumProperty(
 
 
 def register():
-    bpy.utils.register_class(KEX_OT_Operator)
-    bpy.utils.register_class(KEX_BAKES_OT_Operator)
+    bpy.utils.register_class(KEX_OT_ExportAsset)
+    bpy.utils.register_class(KEX_OT_OpenFolder)
     bpy.utils.register_class(KEX_PT_Panel)
 
 
 def unregister():
-    bpy.utils.unregister_class(KEX_OT_Operator)
-    bpy.utils.unregister_class(KEX_BAKES_OT_Operator)
+    bpy.utils.unregister_class(KEX_OT_ExportAsset)
+    bpy.utils.unregister_class(KEX_OT_OpenFolder)
     bpy.utils.unregister_class(KEX_PT_Panel)
 
 
